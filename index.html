@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SafeHands Memory Co. | Photo Digitizing & Restoration in Mansfield, Ohio</title>
   <meta name="description" content="SafeHands Memory Co. preserves photos, slides, albums, and family memories with careful digitizing, restoration, and secure delivery in Mansfield, Ohio." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FAF8F5'/%3E%3Cpath d='M16 30c2-10 10-17 20-17 6 0 11 2 15 6' fill='none' stroke='%237C8F7A' stroke-width='4' stroke-linecap='round'/%3E%3Crect x='24' y='18' width='16' height='19' rx='2.5' fill='%23EFE7D8' stroke='%23263B31' stroke-width='3'/%3E%3Cpath d='M14 38c6 7 12 10 18 10s12-3 18-10M19 34c4 2 7 4 10 8M45 34c-4 2-7 4-10 8' fill='none' stroke='%23263B31' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M42 18c4-4 8-6 12-6' fill='none' stroke='%23C8A47E' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M48 15c1-4 3-6 7-7 0 4-3 6-7 7z' fill='%23E8EEE6' stroke='%237C8F7A' stroke-width='2'/%3E%3C/svg%3E" />
 
   <style>
     :root{
@@ -2417,6 +2418,20 @@
       overflow:hidden;
     }
 
+    .brand{
+      gap:14px;
+      align-items:center;
+    }
+
+    .brand .logo-mark{
+      width:68px;
+      height:68px;
+      border-width:1px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.88),
+        0 16px 34px rgba(31,39,34,.13);
+    }
+
     .brand-logo-svg{
       width:100%;
       height:100%;
@@ -2424,15 +2439,23 @@
     }
 
     .brand-logo-svg .logo-photo{
-      fill:rgba(250,248,245,.9);
+      fill:rgba(250,248,245,.96);
       stroke:var(--forest);
-      stroke-width:2.35;
+      stroke-width:3.1;
     }
 
     .brand-logo-svg .logo-line{
       fill:none;
       stroke:var(--forest);
-      stroke-width:2.45;
+      stroke-width:3.25;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .brand-logo-svg .logo-arc{
+      fill:none;
+      stroke:var(--sage);
+      stroke-width:2.4;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
@@ -2440,7 +2463,7 @@
     .brand-logo-svg .logo-accent{
       fill:none;
       stroke:var(--sand);
-      stroke-width:1.85;
+      stroke-width:2.2;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
@@ -2448,7 +2471,7 @@
     .brand-logo-svg .logo-leaf{
       fill:rgba(139,159,133,.24);
       stroke:var(--sage);
-      stroke-width:1.55;
+      stroke-width:1.9;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
@@ -2461,8 +2484,8 @@
     }
 
     .footer-brand .logo-mark{
-      width:48px;
-      height:48px;
+      width:56px;
+      height:56px;
       border-color:rgba(216,183,117,.42);
       background:linear-gradient(145deg, rgba(246,235,221,.96), rgba(231,218,195,.88));
       box-shadow:0 12px 24px rgba(0,0,0,.18);
@@ -2475,6 +2498,28 @@
 
     .footer-brand .brand-text span{
       color:#D8B775;
+    }
+
+    .hero{
+      overflow:hidden;
+    }
+
+    #services .logo-mark,
+    #services .brand-logo-svg,
+    #services .small-logo{
+      display:none;
+    }
+
+    @media(max-width:420px){
+      .brand .logo-mark{
+        width:60px;
+        height:60px;
+      }
+
+      .footer-brand .logo-mark{
+        width:52px;
+        height:52px;
+      }
     }
   </style>
 </head>
@@ -2489,18 +2534,19 @@
     <div class="nav-inner">
       <a class="brand" href="#" aria-label="SafeHands Memory Co. home">
         <div class="logo-mark">
-          <svg class="brand-logo-svg" viewBox="0 0 64 64" role="img" aria-labelledby="safehands-logo-title-header">
-            <title id="safehands-logo-title-header">SafeHands Memory Co. logo: gentle hands holding a photo with a leaf accent</title>
-            <rect class="logo-photo" x="23.5" y="15.5" width="17" height="20" rx="2.6"></rect>
-            <path class="logo-accent" d="M27.5 29.5l3.7-4.4 2.6 3.1 2.1-2.4 3.2 3.7"></path>
-            <circle class="logo-accent" cx="29.2" cy="21.5" r="1.2"></circle>
-            <path class="logo-line" d="M18.5 35.5c4.1 7 8.6 10.2 13.5 10.2s9.4-3.2 13.5-10.2"></path>
-            <path class="logo-line" d="M11.5 36.4c6.3 7.9 12.9 12 20.5 12s14.2-4.1 20.5-12"></path>
-            <path class="logo-line" d="M15.2 31.2c3.1 1.4 5.6 3.2 7.4 5.5"></path>
-            <path class="logo-line" d="M48.8 31.2c-3.1 1.4-5.6 3.2-7.4 5.5"></path>
-            <path class="logo-accent" d="M42.2 17.4c3.4-3.6 7.2-5.4 11.3-5.5"></path>
-            <path class="logo-leaf" d="M47.4 14.1c1.3-3.7 3.4-5.8 6.3-6.2-.2 3.1-2.2 5.2-6.3 6.2z"></path>
-            <path class="logo-leaf" d="M45.4 17.5c3.6.2 5.9 1.5 7.1 3.9-2.7.8-5.1-.5-7.1-3.9z"></path>
+          <svg class="brand-logo-svg" viewBox="0 0 72 72" role="img" aria-labelledby="safehands-logo-title-header">
+            <title id="safehands-logo-title-header">SafeHands Memory Co. logo: two gentle hands holding a photo with an olive leaf accent</title>
+            <path class="logo-arc" d="M14.5 33.5C16.6 20.9 26.5 12 38.7 12c7.6 0 14.4 3.6 18.8 9.1"></path>
+            <rect class="logo-photo" x="27" y="17.5" width="19" height="23" rx="3.2"></rect>
+            <path class="logo-accent" d="M31 34l4.3-5.1 3 3.7 2.5-2.9 3.8 4.3"></path>
+            <circle class="logo-accent" cx="33.1" cy="24" r="1.35"></circle>
+            <path class="logo-line" d="M19.5 40c5.1 7.7 10.6 11.2 16.5 11.2S47.4 47.7 52.5 40"></path>
+            <path class="logo-line" d="M12.8 41.9C20 50.8 27.5 55.3 36 55.3s16-4.5 23.2-13.4"></path>
+            <path class="logo-line" d="M17.7 35.7c3.8 1.7 6.9 4.1 9.2 7.1"></path>
+            <path class="logo-line" d="M54.3 35.7c-3.8 1.7-6.9 4.1-9.2 7.1"></path>
+            <path class="logo-accent" d="M47.8 18.2c4-4.5 8.6-6.9 13.6-7.1"></path>
+            <path class="logo-leaf" d="M53.7 14.5c1.3-4.2 3.8-6.7 7.5-7.4-.1 3.8-2.6 6.3-7.5 7.4z"></path>
+            <path class="logo-leaf" d="M51.4 18.6c4.4.1 7.2 1.8 8.6 4.8-3.3.9-6.2-.7-8.6-4.8z"></path>
           </svg>
         </div>
         <div class="brand-text">
@@ -2903,18 +2949,19 @@
       <div>
         <div class="footer-brand" aria-label="SafeHands Memory Co.">
           <div class="logo-mark">
-            <svg class="brand-logo-svg" viewBox="0 0 64 64" role="img" aria-labelledby="safehands-logo-title-footer">
-              <title id="safehands-logo-title-footer">SafeHands Memory Co. logo: gentle hands holding a photo with a leaf accent</title>
-              <rect class="logo-photo" x="23.5" y="15.5" width="17" height="20" rx="2.6"></rect>
-              <path class="logo-accent" d="M27.5 29.5l3.7-4.4 2.6 3.1 2.1-2.4 3.2 3.7"></path>
-              <circle class="logo-accent" cx="29.2" cy="21.5" r="1.2"></circle>
-              <path class="logo-line" d="M18.5 35.5c4.1 7 8.6 10.2 13.5 10.2s9.4-3.2 13.5-10.2"></path>
-              <path class="logo-line" d="M11.5 36.4c6.3 7.9 12.9 12 20.5 12s14.2-4.1 20.5-12"></path>
-              <path class="logo-line" d="M15.2 31.2c3.1 1.4 5.6 3.2 7.4 5.5"></path>
-              <path class="logo-line" d="M48.8 31.2c-3.1 1.4-5.6 3.2-7.4 5.5"></path>
-              <path class="logo-accent" d="M42.2 17.4c3.4-3.6 7.2-5.4 11.3-5.5"></path>
-              <path class="logo-leaf" d="M47.4 14.1c1.3-3.7 3.4-5.8 6.3-6.2-.2 3.1-2.2 5.2-6.3 6.2z"></path>
-              <path class="logo-leaf" d="M45.4 17.5c3.6.2 5.9 1.5 7.1 3.9-2.7.8-5.1-.5-7.1-3.9z"></path>
+            <svg class="brand-logo-svg" viewBox="0 0 72 72" role="img" aria-labelledby="safehands-logo-title-footer">
+              <title id="safehands-logo-title-footer">SafeHands Memory Co. logo: two gentle hands holding a photo with an olive leaf accent</title>
+              <path class="logo-arc" d="M14.5 33.5C16.6 20.9 26.5 12 38.7 12c7.6 0 14.4 3.6 18.8 9.1"></path>
+              <rect class="logo-photo" x="27" y="17.5" width="19" height="23" rx="3.2"></rect>
+              <path class="logo-accent" d="M31 34l4.3-5.1 3 3.7 2.5-2.9 3.8 4.3"></path>
+              <circle class="logo-accent" cx="33.1" cy="24" r="1.35"></circle>
+              <path class="logo-line" d="M19.5 40c5.1 7.7 10.6 11.2 16.5 11.2S47.4 47.7 52.5 40"></path>
+              <path class="logo-line" d="M12.8 41.9C20 50.8 27.5 55.3 36 55.3s16-4.5 23.2-13.4"></path>
+              <path class="logo-line" d="M17.7 35.7c3.8 1.7 6.9 4.1 9.2 7.1"></path>
+              <path class="logo-line" d="M54.3 35.7c-3.8 1.7-6.9 4.1-9.2 7.1"></path>
+              <path class="logo-accent" d="M47.8 18.2c4-4.5 8.6-6.9 13.6-7.1"></path>
+              <path class="logo-leaf" d="M53.7 14.5c1.3-4.2 3.8-6.7 7.5-7.4-.1 3.8-2.6 6.3-7.5 7.4z"></path>
+              <path class="logo-leaf" d="M51.4 18.6c4.4.1 7.2 1.8 8.6 4.8-3.3.9-6.2-.7-8.6-4.8z"></path>
             </svg>
           </div>
           <div class="brand-text">
