@@ -1,0 +1,2846 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafeHands Memory Co. | Photo Digitizing & Restoration in Mansfield, Ohio</title>
+  <meta name="description" content="SafeHands Memory Co. preserves photos, slides, albums, and family memories with careful digitizing, restoration, and secure delivery in Mansfield, Ohio." />
+
+  <style>
+    :root{
+      --forest:#263B31;
+      --forest-dark:#17251F;
+      --sage:#7C8F7A;
+      --sage-light:#E8EEE6;
+      --sand:#C8A47E;
+      --sand-soft:#E9D8BD;
+      --cream:#FAF8F5;
+      --linen:#EFE7D8;
+      --white:#FFFFFF;
+      --ink:#1F2722;
+      --muted:#6D766E;
+      --gold:#C79A4B;
+      --shadow:0 22px 70px rgba(31,39,34,.13);
+      --soft-shadow:0 14px 40px rgba(31,39,34,.08);
+      --radius:26px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    h1,h2,h3{
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight:500;
+      color:var(--forest);
+      margin:0;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .topbar{
+      background:var(--forest-dark);
+      color:#F6EFE3;
+      text-align:center;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      padding:9px 16px;
+    }
+
+    .nav{
+      background:rgba(250,248,245,.96);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(38,59,49,.08);
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+
+    .nav-inner{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-mark{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:2px solid var(--sage);
+      background:linear-gradient(145deg,#fff,var(--linen));
+      position:relative;
+      box-shadow:0 10px 25px rgba(38,59,49,.08);
+      flex:0 0 auto;
+    }
+
+    .logo-mark:before{
+      content:"";
+      position:absolute;
+      left:15px;
+      top:12px;
+      width:20px;
+      height:16px;
+      border:2px solid var(--forest);
+      border-radius:4px;
+    }
+
+    .logo-mark:after{
+      content:"";
+      position:absolute;
+      left:11px;
+      bottom:9px;
+      width:28px;
+      height:20px;
+      border-left:2px solid var(--forest);
+      border-right:2px solid var(--forest);
+      border-bottom:2px solid var(--forest);
+      border-radius:0 0 18px 18px;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-family:Georgia, "Times New Roman", serif;
+      color:var(--forest);
+      font-size:27px;
+      line-height:1;
+      font-weight:500;
+    }
+
+    .brand-text span{
+      display:block;
+      color:var(--sand);
+      font-size:11px;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      margin-top:6px;
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:#2D352F;
+    }
+
+    .nav-links a{
+      opacity:.78;
+    }
+
+    .nav-links a:hover{
+      opacity:1;
+      color:var(--forest);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      min-height:48px;
+      padding:0 22px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:var(--forest);
+      color:white;
+      box-shadow:0 15px 35px rgba(38,59,49,.22);
+    }
+
+    .btn-primary:hover{
+      background:var(--forest-dark);
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.65);
+      color:var(--forest);
+      border-color:rgba(38,59,49,.22);
+    }
+
+    .btn-secondary:hover{
+      background:white;
+      transform:translateY(-2px);
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at 78% 30%, rgba(200,164,126,.23), transparent 26%),
+        linear-gradient(90deg, rgba(250,248,245,.98) 0%, rgba(250,248,245,.93) 45%, rgba(250,248,245,.45) 72%, rgba(250,248,245,.18) 100%),
+        url("https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center right;
+      min-height:720px;
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid rgba(38,59,49,.08);
+    }
+
+    .hero-inner{
+      width:100%;
+      max-width:1180px;
+      margin:0 auto;
+      padding:76px 22px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:46px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      color:var(--sand);
+      font-size:13px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:68px;
+      line-height:1.02;
+      letter-spacing:0;
+      max-width:680px;
+    }
+
+    h1 em{
+      color:var(--sand);
+      font-style:italic;
+      font-weight:400;
+    }
+
+    .hero-copy{
+      font-size:18px;
+      line-height:1.85;
+      max-width:570px;
+      margin-top:22px;
+      color:#3F4A43;
+    }
+
+    .hero-actions{
+      margin-top:32px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .trust-row{
+      margin-top:44px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      max-width:720px;
+    }
+
+    .trust-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .trust-icon{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      border:1px solid var(--sage);
+      display:grid;
+      place-items:center;
+      color:var(--forest);
+      font-weight:900;
+      flex:0 0 auto;
+      background:rgba(255,255,255,.55);
+    }
+
+    .trust-item strong{
+      display:block;
+      color:var(--forest);
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .trust-item span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:34px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .memory-box{
+      min-height:380px;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 68% 24%, rgba(200,164,126,.25), transparent 28%),
+        linear-gradient(145deg, #31483C, #15251E);
+      color:#F4E9D7;
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .memory-box:before{
+      content:"";
+      position:absolute;
+      inset:22px;
+      border:1px solid rgba(200,164,126,.28);
+      border-radius:24px;
+    }
+
+    .memory-box .small-logo{
+      width:74px;
+      height:74px;
+      border:1px solid rgba(244,233,215,.42);
+      border-radius:50%;
+      margin-bottom:20px;
+      position:relative;
+    }
+
+    .memory-box h2{
+      color:#F6EBDD;
+      font-size:38px;
+      line-height:1.1;
+      z-index:1;
+    }
+
+    .memory-box p{
+      color:#C8A47E;
+      margin-top:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:13px;
+      z-index:1;
+    }
+
+    .section{
+      padding:84px 22px;
+    }
+
+    .section-inner{
+      max-width:1180px;
+      margin:0 auto;
+    }
+
+    .section-heading{
+      text-align:center;
+      max-width:770px;
+      margin:0 auto 48px;
+    }
+
+    .section-heading h2{
+      font-size:44px;
+      line-height:1.12;
+      letter-spacing:0;
+    }
+
+    .section-heading p{
+      margin:16px auto 0;
+      font-size:17px;
+      max-width:690px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      background:white;
+      border:1px solid rgba(38,59,49,.08);
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--soft-shadow);
+    }
+
+    .service{
+      padding:34px 22px;
+      text-align:center;
+      border-right:1px solid rgba(38,59,49,.09);
+      transition:.25s ease;
+    }
+
+    .service:last-child{
+      border-right:0;
+    }
+
+    .service:hover{
+      background:#FBF7EF;
+      transform:translateY(-4px);
+    }
+
+    .service-icon{
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:var(--cream);
+      border:1px solid rgba(38,59,49,.12);
+      margin:0 auto 18px;
+      display:grid;
+      place-items:center;
+      font-size:27px;
+      color:var(--forest);
+    }
+
+    .service h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .service p{
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .how{
+      background:linear-gradient(180deg,#fff,var(--cream));
+      border-top:1px solid rgba(38,59,49,.08);
+      border-bottom:1px solid rgba(38,59,49,.08);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+    }
+
+    .step{
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(38,59,49,.08);
+      border-radius:24px;
+      padding:28px 22px;
+      text-align:center;
+      box-shadow:0 12px 34px rgba(31,39,34,.06);
+    }
+
+    .step-number{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:var(--forest);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      margin:0 auto 18px;
+    }
+
+    .step h3{
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .step p{
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .promise{
+      background:var(--forest);
+      color:white;
+      padding:84px 22px;
+    }
+
+    .promise-grid{
+      max-width:1180px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:46px;
+      align-items:center;
+    }
+
+    .promise-image{
+      min-height:380px;
+      border-radius:34px;
+      background:
+        linear-gradient(90deg, rgba(23,37,31,.13), rgba(23,37,31,.22)),
+        url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80");
+      background-size:cover;
+      background-position:center;
+      box-shadow:0 28px 80px rgba(0,0,0,.24);
+    }
+
+    .promise h2{
+      color:#F6EBDD;
+      font-size:48px;
+      line-height:1.15;
+      letter-spacing:0;
+    }
+
+    .promise h2 span{
+      display:block;
+      color:var(--sand);
+    }
+
+    .promise p{
+      color:#DDE5DE;
+      font-size:17px;
+      margin-top:18px;
+    }
+
+    .promise-list{
+      display:grid;
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .promise-point{
+      display:flex;
+      gap:13px;
+      align-items:flex-start;
+    }
+
+    .check{
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      border:1px solid var(--sand);
+      color:var(--sand);
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      font-weight:900;
+    }
+
+    .promise-point strong{
+      color:white;
+      display:block;
+      margin-bottom:3px;
+    }
+
+    .promise-point p{
+      margin:0;
+      font-size:14px;
+      color:#C9D4CC;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .price-card{
+      background:white;
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--soft-shadow);
+      position:relative;
+    }
+
+    .price-card.featured{
+      border:2px solid var(--sand);
+      transform:translateY(-8px);
+    }
+
+    .badge{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:var(--forest);
+      color:white;
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:900;
+    }
+
+    .price-card h3{
+      font-size:26px;
+      padding-right:80px;
+    }
+
+    .price-card p{
+      margin-top:12px;
+      font-size:15px;
+    }
+
+    .money{
+      font-family:Georgia, "Times New Roman", serif;
+      color:var(--gold);
+      font-size:30px;
+      margin:22px 0;
+      font-weight:700;
+    }
+
+    .price-card ul{
+      padding-left:20px;
+      color:var(--muted);
+      line-height:1.9;
+      margin-bottom:24px;
+    }
+
+    .quote-box{
+      background:
+        radial-gradient(circle at 85% 30%, rgba(200,164,126,.18), transparent 26%),
+        linear-gradient(90deg, rgba(38,59,49,.98), rgba(23,37,31,.95));
+      border-radius:36px;
+      padding:50px;
+      color:white;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      box-shadow:var(--shadow);
+    }
+
+    .quote-box h2{
+      color:#F6EBDD;
+      font-size:40px;
+      margin-bottom:12px;
+    }
+
+    .quote-box p{
+      color:#DDE5DE;
+      max-width:650px;
+    }
+
+    .quote-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .footer{
+      background:var(--forest-dark);
+      color:#E9EFEA;
+      padding:48px 22px 28px;
+    }
+
+    .footer-inner{
+      max-width:1180px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:28px;
+    }
+
+    .footer h3{
+      color:white;
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .footer p,
+    .footer a{
+      color:#C9D4CC;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .copyright{
+      max-width:1180px;
+      margin:34px auto 0;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.12);
+      text-align:center;
+      color:#AEBBB2;
+      font-size:13px;
+    }
+
+    @media(max-width:960px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        background:
+          linear-gradient(180deg, rgba(250,248,245,.97), rgba(250,248,245,.90)),
+          url("https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80");
+        background-size:cover;
+        background-position:center;
+      }
+
+      .hero-inner{
+        grid-template-columns:1fr;
+        padding:56px 18px;
+      }
+
+      h1{
+        font-size:46px;
+      }
+
+      .hero-copy{
+        font-size:16px;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        margin-top:8px;
+      }
+
+      .memory-box{
+        min-height:285px;
+      }
+
+      .services{
+        grid-template-columns:1fr;
+      }
+
+      .service{
+        border-right:0;
+        border-bottom:1px solid rgba(38,59,49,.09);
+      }
+
+      .service:last-child{
+        border-bottom:0;
+      }
+
+      .steps,
+      .promise-grid,
+      .pricing,
+      .quote-box,
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+
+      .price-card.featured{
+        transform:none;
+      }
+
+      .quote-box{
+        padding:34px 24px;
+      }
+
+      .quote-actions{
+        justify-content:flex-start;
+      }
+
+      .promise-image{
+        min-height:280px;
+      }
+    }
+
+    @media(max-width:540px){
+      .topbar{
+        font-size:10px;
+        line-height:1.5;
+      }
+
+      .nav-inner{
+        padding:14px 14px;
+      }
+
+      .brand-text strong{
+        font-size:22px;
+      }
+
+      .brand-text span{
+        font-size:9px;
+      }
+
+      .nav .btn,
+      .nav-btn{
+        display:none;
+      }
+
+      h1{
+        font-size:40px;
+      }
+
+      .section{
+        padding:60px 14px;
+      }
+
+      .section-heading h2{
+        font-size:34px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .quote-actions{
+        flex-direction:column;
+      }
+
+      .price-card{
+        padding:24px;
+      }
+
+      .price-card h3{
+        padding-right:0;
+      }
+
+      .badge{
+        position:static;
+        display:inline-block;
+        margin-bottom:12px;
+      }
+    }
+
+    /* Premium responsive refinement */
+    body{
+      background:
+        linear-gradient(180deg,#FEFCF8 0%,#FAF8F5 44%,#F2ECE2 100%);
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    p{
+      max-width:68ch;
+    }
+
+    .topbar{
+      padding:10px 18px;
+      font-size:11px;
+      letter-spacing:.14em;
+    }
+
+    .nav-inner,
+    .hero-inner,
+    .section-inner,
+    .promise-grid,
+    .footer-inner,
+    .copyright{
+      max-width:1120px;
+    }
+
+    .nav-inner{
+      min-height:76px;
+      padding:12px 20px;
+    }
+
+    .logo-mark{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+    }
+
+    .logo-mark:before{
+      left:13px;
+      top:11px;
+      width:18px;
+      height:14px;
+    }
+
+    .logo-mark:after{
+      left:10px;
+      width:24px;
+      height:17px;
+    }
+
+    .brand-text strong{
+      font-size:25px;
+      letter-spacing:0;
+    }
+
+    .brand-text span{
+      color:#9E7742;
+      letter-spacing:.22em;
+    }
+
+    .btn{
+      min-height:50px;
+      padding:0 22px;
+      border-radius:14px;
+      letter-spacing:.06em;
+      box-shadow:none;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg,#31483C,#1D3027);
+      border-color:rgba(255,255,255,.08);
+      box-shadow:0 14px 32px rgba(38,59,49,.2);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.86);
+      border-color:rgba(38,59,49,.18);
+      color:#263B31;
+    }
+
+    .hero{
+      min-height:auto;
+      background:
+        linear-gradient(180deg, rgba(250,248,245,.96), rgba(250,248,245,.92)),
+        url("https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-inner{
+      grid-template-columns:1fr;
+      gap:28px;
+      padding:48px 18px 56px;
+    }
+
+    .eyebrow{
+      color:#9E7742;
+      font-size:12px;
+      letter-spacing:.18em;
+      margin-bottom:14px;
+    }
+
+    h1{
+      max-width:760px;
+      font-size:clamp(42px, 12vw, 70px);
+      line-height:1.01;
+      letter-spacing:0;
+    }
+
+    .hero-copy{
+      max-width:640px;
+      margin-top:18px;
+      font-size:17px;
+      line-height:1.75;
+      color:#39463F;
+    }
+
+    .hero-actions,
+    .quote-actions{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      max-width:420px;
+    }
+
+    .hero-actions .btn,
+    .quote-actions .btn,
+    .price-card .btn{
+      width:100%;
+    }
+
+    .trust-row{
+      grid-template-columns:1fr;
+      gap:12px;
+      max-width:680px;
+      margin-top:30px;
+    }
+
+    .trust-item{
+      min-height:84px;
+      padding:16px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:18px;
+      box-shadow:0 10px 28px rgba(31,39,34,.06);
+    }
+
+    .trust-icon{
+      width:36px;
+      height:36px;
+      background:#F8F3EA;
+      border-color:rgba(38,59,49,.14);
+    }
+
+    .hero-card{
+      padding:10px;
+      border-radius:22px;
+      background:rgba(255,255,255,.82);
+      border-color:rgba(38,59,49,.1);
+      box-shadow:0 18px 48px rgba(31,39,34,.13);
+    }
+
+    .memory-box{
+      min-height:270px;
+      border-radius:16px;
+      padding:28px 22px;
+    }
+
+    .memory-box:before{
+      inset:14px;
+      border-radius:12px;
+    }
+
+    .memory-box h2{
+      font-size:32px;
+    }
+
+    .section{
+      padding:68px 18px;
+    }
+
+    .section-heading{
+      text-align:left;
+      margin:0 0 30px;
+      max-width:720px;
+    }
+
+    .section-heading h2{
+      font-size:clamp(32px, 8vw, 46px);
+      line-height:1.1;
+      letter-spacing:0;
+    }
+
+    .section-heading p{
+      margin:14px 0 0;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      background:transparent;
+      border:0;
+      border-radius:0;
+      overflow:visible;
+      box-shadow:none;
+    }
+
+    .service{
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:16px;
+      align-items:start;
+      padding:20px;
+      text-align:left;
+      background:white;
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(31,39,34,.06);
+    }
+
+    .service:hover{
+      transform:none;
+      background:white;
+      border-color:rgba(38,59,49,.18);
+    }
+
+    .service-icon{
+      width:54px;
+      height:54px;
+      margin:0;
+      border-radius:14px;
+      background:#F7F1E8;
+      font-size:23px;
+    }
+
+    .service h3{
+      font-size:20px;
+      margin-bottom:6px;
+    }
+
+    .service p{
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    .steps{
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:16px;
+      padding:20px;
+      text-align:left;
+      border-radius:18px;
+      box-shadow:0 10px 28px rgba(31,39,34,.06);
+    }
+
+    .step-number{
+      margin:0;
+    }
+
+    .promise{
+      padding:68px 18px;
+    }
+
+    .promise-grid{
+      grid-template-columns:1fr;
+      gap:28px;
+    }
+
+    .promise-image{
+      min-height:280px;
+      border-radius:20px;
+    }
+
+    .promise h2{
+      font-size:clamp(34px, 8vw, 50px);
+    }
+
+    .promise p{
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .promise-point{
+      padding:16px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+    }
+
+    .pricing{
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+
+    .price-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      padding:24px;
+      border-radius:20px;
+      box-shadow:0 14px 38px rgba(31,39,34,.07);
+    }
+
+    .price-card.featured{
+      transform:none;
+      border:1px solid rgba(158,119,66,.48);
+      box-shadow:0 18px 46px rgba(158,119,66,.13);
+    }
+
+    .badge{
+      position:static;
+      align-self:flex-start;
+      margin-bottom:12px;
+      background:#263B31;
+      border-radius:10px;
+    }
+
+    .price-card h3{
+      padding-right:0;
+      font-size:25px;
+    }
+
+    .money{
+      margin:18px 0 14px;
+      color:#9E7742;
+      font-size:29px;
+      line-height:1.15;
+    }
+
+    .price-card ul{
+      margin:0 0 24px;
+      padding-left:19px;
+      line-height:1.8;
+    }
+
+    .price-card .btn{
+      margin-top:auto;
+    }
+
+    .quote-box{
+      grid-template-columns:1fr;
+      gap:24px;
+      padding:30px 22px;
+      border-radius:22px;
+      background:
+        linear-gradient(135deg, rgba(49,72,60,.98), rgba(23,37,31,.97));
+    }
+
+    .quote-box h2{
+      font-size:clamp(31px, 8vw, 42px);
+      line-height:1.1;
+    }
+
+    .quote-actions{
+      justify-content:stretch;
+      max-width:none;
+    }
+
+    .footer{
+      padding:46px 18px 28px;
+    }
+
+    .footer-inner{
+      grid-template-columns:1fr;
+      gap:26px;
+    }
+
+    .footer h3{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .footer p,
+    .footer a{
+      font-size:15px;
+      line-height:1.75;
+    }
+
+    .footer a{
+      text-decoration:underline;
+      text-decoration-color:rgba(201,212,204,.35);
+      text-underline-offset:3px;
+    }
+
+    .copyright{
+      margin-top:28px;
+      text-align:left;
+      line-height:1.6;
+    }
+
+    @media(min-width:640px){
+      .hero-actions,
+      .quote-actions{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .trust-row{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-item{
+        display:block;
+      }
+
+      .trust-icon{
+        margin-bottom:12px;
+      }
+
+      .services,
+      .steps,
+      .pricing,
+      .footer-inner{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .service{
+        display:block;
+      }
+
+      .service-icon{
+        margin-bottom:16px;
+      }
+
+      .quote-box{
+        padding:38px;
+      }
+    }
+
+    @media(min-width:900px){
+      .hero{
+        background:
+          radial-gradient(circle at 78% 30%, rgba(200,164,126,.18), transparent 24%),
+          linear-gradient(90deg, rgba(250,248,245,.98) 0%, rgba(250,248,245,.94) 46%, rgba(250,248,245,.42) 76%, rgba(250,248,245,.18) 100%),
+          url("https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1600&q=80");
+        background-size:cover;
+        background-position:center right;
+      }
+
+      .hero-inner{
+        grid-template-columns:minmax(0, 1.08fr) minmax(330px, .72fr);
+        align-items:center;
+        gap:48px;
+        padding:82px 22px;
+      }
+
+      .hero-card{
+        margin-top:0;
+      }
+
+      .memory-box{
+        min-height:390px;
+      }
+
+      .section{
+        padding:92px 22px;
+      }
+
+      .section-heading{
+        text-align:center;
+        margin:0 auto 46px;
+      }
+
+      .section-heading p{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .services{
+        grid-template-columns:repeat(5, minmax(0, 1fr));
+        gap:12px;
+      }
+
+      .service{
+        padding:24px 18px;
+      }
+
+      .service h3{
+        font-size:18px;
+      }
+
+      .service p{
+        font-size:14px;
+      }
+
+      .steps{
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+      }
+
+      .step{
+        display:block;
+        text-align:center;
+        padding:26px 20px;
+      }
+
+      .step-number{
+        margin:0 auto 16px;
+      }
+
+      .promise{
+        padding:92px 22px;
+      }
+
+      .promise-grid{
+        grid-template-columns:1fr 1fr;
+        align-items:center;
+        gap:50px;
+      }
+
+      .promise-image{
+        min-height:420px;
+      }
+
+      .pricing{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+
+      .price-card{
+        padding:30px;
+      }
+
+      .price-card.featured{
+        transform:translateY(-8px);
+      }
+
+      .quote-box{
+        grid-template-columns:minmax(0, 1fr) minmax(300px, auto);
+        align-items:center;
+        padding:48px;
+      }
+
+      .quote-actions{
+        min-width:310px;
+      }
+
+      .footer-inner{
+        grid-template-columns:1.15fr 1fr .95fr;
+      }
+    }
+
+    @media(max-width:380px){
+      .brand{
+        gap:9px;
+      }
+
+      .logo-mark{
+        width:40px;
+        height:40px;
+      }
+
+      .brand-text strong{
+        font-size:20px;
+      }
+
+      h1{
+        font-size:38px;
+      }
+
+      .service,
+      .step,
+      .trust-item{
+        padding:16px;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand-text strong,
+    .section-heading h2,
+    .promise h2{
+      letter-spacing:0;
+    }
+
+    .btn{
+      border-radius:10px;
+    }
+
+    .trust-item,
+    .service,
+    .step,
+    .promise-point,
+    .price-card{
+      border-radius:8px;
+    }
+
+    .hero-card,
+    .quote-box,
+    .promise-image{
+      border-radius:10px;
+    }
+
+    .memory-box{
+      border-radius:8px;
+    }
+
+    .memory-box:before{
+      border-radius:6px;
+    }
+
+    /* Mobile preview fixes */
+    .brand{
+      min-width:0;
+    }
+
+    .logo-mark{
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.96), rgba(239,231,216,.92));
+      border:1px solid rgba(38,59,49,.18);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.8),
+        0 12px 26px rgba(31,39,34,.1);
+    }
+
+    .logo-mark:before,
+    .logo-mark:after{
+      border-color:#263B31;
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-text strong{
+      color:#1F342A;
+    }
+
+    .brand-text span{
+      color:#9E7742;
+      letter-spacing:.18em;
+    }
+
+    .hero-inner{
+      row-gap:34px;
+    }
+
+    .trust-row{
+      margin-bottom:10px;
+    }
+
+    .hero-card{
+      margin-top:6px;
+    }
+
+    .service,
+    .step,
+    .price-card{
+      width:100%;
+      min-width:0;
+    }
+
+    .service-icon,
+    .step-number{
+      grid-row:1 / span 2;
+    }
+
+    .service h3,
+    .service p,
+    .step h3,
+    .step p{
+      grid-column:2;
+      min-width:0;
+      overflow-wrap:normal;
+      word-break:normal;
+    }
+
+    .service p,
+    .step p,
+    .price-card p,
+    .price-card li{
+      max-width:none;
+      hyphens:none;
+    }
+
+    .steps,
+    .pricing,
+    .services{
+      width:100%;
+    }
+
+    .steps{
+      grid-template-columns:minmax(0, 1fr);
+      gap:16px;
+    }
+
+    .step{
+      grid-template-columns:44px minmax(0, 1fr);
+      align-items:start;
+      padding:18px;
+    }
+
+    .step h3{
+      font-size:19px;
+      line-height:1.2;
+      margin-bottom:4px;
+    }
+
+    .step p{
+      font-size:15px;
+      line-height:1.62;
+    }
+
+    .service{
+      grid-template-columns:52px minmax(0, 1fr);
+      min-height:148px;
+    }
+
+    .pricing{
+      grid-template-columns:minmax(0, 1fr);
+      gap:18px;
+    }
+
+    .price-card{
+      padding:24px 20px;
+    }
+
+    .money{
+      overflow-wrap:normal;
+      white-space:normal;
+    }
+
+    @media(min-width:640px) and (max-width:759px){
+      .steps,
+      .pricing{
+        grid-template-columns:minmax(0, 1fr);
+      }
+
+      .step{
+        display:grid;
+        grid-template-columns:46px minmax(0, 1fr);
+        text-align:left;
+      }
+
+      .step-number{
+        margin:0;
+      }
+    }
+
+    @media(min-width:760px){
+      .steps{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .step{
+        display:grid;
+        grid-template-columns:46px minmax(0, 1fr);
+        text-align:left;
+      }
+
+      .step-number{
+        margin:0;
+      }
+
+      .pricing{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media(min-width:900px){
+      .hero-inner{
+        gap:58px;
+      }
+
+      .services{
+        align-items:stretch;
+      }
+
+      .service{
+        display:flex;
+        flex-direction:column;
+        min-height:230px;
+      }
+
+      .service-icon{
+        grid-row:auto;
+      }
+
+      .service p{
+        margin-top:auto;
+      }
+
+      .steps{
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+      }
+
+      .step{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        min-height:220px;
+        text-align:center;
+      }
+
+      .step-number{
+        margin:0 0 16px;
+      }
+
+      .step p{
+        margin-top:auto;
+      }
+
+      .pricing{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media(max-width:420px){
+      .nav-inner{
+        gap:12px;
+        padding-left:16px;
+        padding-right:16px;
+      }
+
+      .brand-text strong{
+        font-size:21px;
+      }
+
+      .brand-text span{
+        font-size:8px;
+        letter-spacing:.16em;
+      }
+
+      .hero-inner{
+        padding-top:42px;
+      }
+
+      .service{
+        grid-template-columns:48px minmax(0, 1fr);
+        gap:14px;
+      }
+
+      .step{
+        grid-template-columns:42px minmax(0, 1fr);
+        gap:14px;
+      }
+
+      .price-card{
+        padding:22px 18px;
+      }
+    }
+
+    /* Launch MVP sections */
+    .nav-inner{
+      min-height:82px;
+    }
+
+    .logo-mark{
+      width:52px;
+      height:52px;
+    }
+
+    .logo-mark:before{
+      left:15px;
+      top:13px;
+      width:19px;
+      height:14px;
+    }
+
+    .logo-mark:after{
+      left:12px;
+      bottom:10px;
+      width:26px;
+      height:18px;
+    }
+
+    .brand-text strong{
+      font-size:27px;
+    }
+
+    .about{
+      padding-top:0;
+    }
+
+    .about-panel{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:26px;
+      padding:28px 22px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(248,243,234,.94));
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:10px;
+      box-shadow:0 16px 42px rgba(31,39,34,.07);
+    }
+
+    .about-panel h2,
+    .quote-form-wrap h2{
+      font-size:clamp(32px, 8vw, 46px);
+      line-height:1.1;
+      color:#263B31;
+    }
+
+    .about-panel p,
+    .quote-form-wrap p{
+      margin-top:16px;
+      font-size:16px;
+      line-height:1.75;
+      color:#4B574F;
+    }
+
+    .about-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .about-point{
+      padding:17px;
+      background:white;
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:8px;
+      box-shadow:0 10px 28px rgba(31,39,34,.05);
+    }
+
+    .about-point strong{
+      display:block;
+      color:#263B31;
+      font-size:16px;
+      margin-bottom:5px;
+    }
+
+    .about-point span{
+      display:block;
+      color:#667068;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .offer-section{
+      padding-top:0;
+    }
+
+    .offer-banner{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:22px;
+      align-items:center;
+      padding:30px 22px;
+      background:
+        radial-gradient(circle at 86% 18%, rgba(200,164,126,.2), transparent 28%),
+        linear-gradient(135deg, #31483C, #17251F);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:10px;
+      box-shadow:0 22px 56px rgba(31,39,34,.15);
+    }
+
+    .offer-banner h2{
+      color:#F6EBDD;
+      font-size:clamp(32px, 8vw, 46px);
+      line-height:1.1;
+    }
+
+    .offer-banner p{
+      margin-top:12px;
+      color:#DDE5DE;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .offer-banner .btn{
+      width:100%;
+      background:#F6EBDD;
+      color:#1F342A;
+      border-color:rgba(246,235,221,.7);
+      box-shadow:none;
+    }
+
+    .faq-section{
+      background:linear-gradient(180deg, rgba(255,255,255,.62), rgba(250,248,245,.92));
+      border-top:1px solid rgba(38,59,49,.08);
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .faq-item{
+      padding:22px 20px;
+      background:white;
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:8px;
+      box-shadow:0 10px 30px rgba(31,39,34,.05);
+    }
+
+    .faq-item h3{
+      font-size:20px;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+
+    .faq-item p{
+      max-width:none;
+      font-size:15px;
+      line-height:1.68;
+    }
+
+    .quote-form-wrap{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      margin-bottom:26px;
+      padding:28px 22px;
+      background:white;
+      border:1px solid rgba(38,59,49,.1);
+      border-radius:10px;
+      box-shadow:0 16px 42px rgba(31,39,34,.07);
+    }
+
+    .quote-form{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .quote-form label{
+      display:grid;
+      gap:7px;
+      min-width:0;
+    }
+
+    .quote-form span{
+      color:#263B31;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .quote-form input,
+    .quote-form textarea{
+      width:100%;
+      min-width:0;
+      border:1px solid rgba(38,59,49,.18);
+      border-radius:8px;
+      background:#FCFAF6;
+      color:#1F2722;
+      font:inherit;
+      font-size:16px;
+      line-height:1.4;
+      padding:14px 14px;
+      outline:none;
+    }
+
+    .quote-form textarea{
+      resize:vertical;
+      min-height:132px;
+    }
+
+    .quote-form input:focus,
+    .quote-form textarea:focus{
+      border-color:#7C8F7A;
+      box-shadow:0 0 0 4px rgba(124,143,122,.16);
+      background:white;
+    }
+
+    .quote-form button{
+      width:100%;
+      margin-top:4px;
+    }
+
+    @media(min-width:700px){
+      .about-panel,
+      .offer-banner,
+      .quote-form-wrap{
+        padding:36px;
+      }
+
+      .about-list,
+      .faq-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .offer-banner{
+        grid-template-columns:minmax(0, 1fr) minmax(220px, auto);
+      }
+
+      .offer-banner .btn{
+        width:auto;
+      }
+
+      .quote-form{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .full-field,
+      .quote-form button{
+        grid-column:1 / -1;
+      }
+    }
+
+    @media(min-width:960px){
+      .logo-mark{
+        width:56px;
+        height:56px;
+      }
+
+      .brand-text strong{
+        font-size:29px;
+      }
+
+      .about-panel,
+      .quote-form-wrap{
+        grid-template-columns:minmax(0, .95fr) minmax(380px, 1.05fr);
+        align-items:center;
+      }
+
+      .about-list{
+        grid-template-columns:1fr;
+      }
+
+      .faq-grid{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+
+      .faq-item{
+        min-height:190px;
+      }
+
+      .quote-form button{
+        justify-self:start;
+        width:auto;
+      }
+    }
+
+    @media(max-width:420px){
+      .logo-mark{
+        width:46px;
+        height:46px;
+      }
+
+      .brand-text strong{
+        font-size:22px;
+      }
+
+      .about-panel,
+      .offer-banner,
+      .quote-form-wrap{
+        padding:24px 18px;
+      }
+    }
+
+    /* Final polish */
+    .hero{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-inner{
+      padding-top:32px;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(199,154,75,.52), transparent);
+    }
+
+    .hero-copy{
+      font-size:18px;
+      color:#334139;
+    }
+
+    .memory-box .small-logo{
+      display:grid;
+      place-items:center;
+    }
+
+    .memory-box .small-logo:before{
+      content:"";
+      width:29px;
+      height:21px;
+      border:2px solid rgba(246,235,221,.82);
+      border-radius:4px;
+      background:
+        radial-gradient(circle at 72% 34%, rgba(216,183,117,.95) 0 3px, transparent 4px),
+        linear-gradient(135deg, transparent 43%, rgba(216,183,117,.78) 44% 58%, transparent 59%);
+      box-shadow:
+        -9px 13px 0 -7px rgba(246,235,221,.72),
+        9px 13px 0 -7px rgba(246,235,221,.72);
+    }
+
+    .memory-box .small-logo:after{
+      content:"";
+      position:absolute;
+      width:44px;
+      height:18px;
+      top:43px;
+      border-bottom:2px solid rgba(216,183,117,.78);
+      border-radius:0 0 24px 24px;
+    }
+
+    .hero-actions .btn-primary,
+    .quote-form .btn-primary,
+    .offer-banner .btn{
+      background:linear-gradient(180deg,#D8B775,#B98738);
+      border-color:rgba(255,255,255,.45);
+      color:#17251F;
+      box-shadow:0 16px 36px rgba(151,103,33,.25);
+    }
+
+    .hero-actions .btn-primary:hover,
+    .quote-form .btn-primary:hover,
+    .offer-banner .btn:hover{
+      background:linear-gradient(180deg,#E2C688,#A9742D);
+      color:#17251F;
+    }
+
+    .offer-banner{
+      position:relative;
+      overflow:hidden;
+      padding:34px 24px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), transparent 38%),
+        radial-gradient(circle at 88% 18%, rgba(216,183,117,.34), transparent 30%),
+        linear-gradient(135deg, #31483C 0%, #17251F 78%);
+      border-color:rgba(216,183,117,.35);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 24px 60px rgba(31,39,34,.18);
+    }
+
+    .offer-banner:before{
+      content:"";
+      position:absolute;
+      inset:12px;
+      border:1px solid rgba(216,183,117,.22);
+      border-radius:8px;
+      pointer-events:none;
+    }
+
+    .offer-banner > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .offer-banner .eyebrow{
+      color:#D8B775;
+    }
+
+    .offer-banner h2{
+      max-width:780px;
+    }
+
+    .offer-banner p{
+      max-width:690px;
+      color:#E8EFE9;
+    }
+
+    .offer-note{
+      margin-top:10px;
+      color:#D8B775;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
+    .offer-banner .btn{
+      min-height:54px;
+      padding:0 28px;
+      font-size:13px;
+    }
+
+    .money{
+      display:grid;
+      gap:3px;
+      color:#8F672F;
+      font-size:32px;
+      line-height:1.05;
+    }
+
+    .money span{
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:#6D766E;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+
+    .price-card{
+      gap:0;
+    }
+
+    .price-card p{
+      min-height:52px;
+      line-height:1.62;
+    }
+
+    .price-card ul{
+      font-size:15px;
+    }
+
+    .faq-section .section-heading{
+      margin-bottom:26px;
+    }
+
+    .faq-grid{
+      gap:12px;
+    }
+
+    .faq-item{
+      padding:20px;
+      background:linear-gradient(180deg,#FFFFFF,#FCFAF6);
+      border-color:rgba(38,59,49,.12);
+    }
+
+    .faq-item h3{
+      color:#23372E;
+      font-size:19px;
+      margin-bottom:7px;
+    }
+
+    .faq-item p{
+      color:#56625A;
+      line-height:1.58;
+    }
+
+    .quote-form-wrap{
+      background:
+        linear-gradient(145deg, #FFFFFF, #FBF7EF);
+      border-color:rgba(38,59,49,.12);
+      box-shadow:0 18px 46px rgba(31,39,34,.08);
+    }
+
+    .quote-form{
+      gap:13px;
+    }
+
+    .quote-form input,
+    .quote-form textarea{
+      background:white;
+      border-color:rgba(38,59,49,.2);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .quote-form button{
+      min-height:54px;
+    }
+
+    .quote-box{
+      border:1px solid rgba(216,183,117,.22);
+      box-shadow:0 22px 56px rgba(31,39,34,.16);
+    }
+
+    .footer{
+      background:
+        linear-gradient(180deg,#20352C,#14231D);
+      border-top:1px solid rgba(216,183,117,.28);
+    }
+
+    .footer-inner{
+      gap:24px;
+    }
+
+    .footer h3{
+      color:#F6EBDD;
+      font-size:19px;
+    }
+
+    .footer p,
+    .footer a{
+      color:#D7E0D9;
+    }
+
+    .footer a{
+      font-weight:700;
+    }
+
+    @media(max-width:699px){
+      .topbar{
+        padding:8px 14px;
+      }
+
+      .nav-inner{
+        min-height:68px;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+
+      .hero-inner{
+        padding:24px 18px 38px;
+        row-gap:22px;
+      }
+
+      .eyebrow{
+        margin-bottom:10px;
+      }
+
+      .hero-copy{
+        margin-top:14px;
+        font-size:16px;
+        line-height:1.62;
+      }
+
+      .hero-actions{
+        margin-top:22px;
+      }
+
+      .trust-row{
+        gap:10px;
+        margin-top:22px;
+        margin-bottom:0;
+      }
+
+      .trust-item{
+        min-height:0;
+        padding:14px;
+      }
+
+      .trust-item span{
+        line-height:1.42;
+      }
+
+      .hero-card{
+        display:none;
+      }
+
+      .section{
+        padding:48px 18px;
+      }
+
+      .section-heading{
+        margin-bottom:22px;
+      }
+
+      .section-heading p{
+        margin-top:10px;
+        line-height:1.6;
+      }
+
+      .service,
+      .step{
+        min-height:0;
+        padding:16px;
+      }
+
+      .offer-section,
+      .about{
+        padding-top:0;
+      }
+
+      .offer-banner,
+      .about-panel,
+      .quote-form-wrap{
+        padding:24px 18px;
+      }
+
+      .offer-banner{
+        gap:18px;
+      }
+
+      .offer-banner p{
+        line-height:1.58;
+      }
+
+      .promise{
+        padding:52px 18px;
+      }
+
+      .promise-grid{
+        gap:22px;
+      }
+
+      .promise-image{
+        min-height:220px;
+      }
+
+      .promise-list{
+        gap:12px;
+      }
+
+      .promise-point{
+        padding:14px;
+      }
+
+      .pricing{
+        gap:14px;
+      }
+
+      .price-card{
+        padding:22px 18px;
+      }
+
+      .price-card p{
+        min-height:0;
+        margin-top:8px;
+      }
+
+      .money{
+        margin:14px 0 12px;
+        font-size:30px;
+      }
+
+      .price-card ul{
+        margin-bottom:18px;
+        line-height:1.65;
+      }
+
+      .faq-grid{
+        gap:10px;
+      }
+
+      .faq-item{
+        padding:17px 16px;
+      }
+
+      .faq-item h3{
+        font-size:18px;
+      }
+
+      .quote-form-wrap{
+        gap:20px;
+        margin-bottom:20px;
+      }
+
+      .quote-form label,
+      .quote-form button{
+        width:100%;
+      }
+
+      .quote-form textarea{
+        min-height:118px;
+      }
+
+      .quote-box{
+        padding:24px 18px;
+      }
+
+      .footer{
+        padding:34px 18px 24px;
+      }
+
+      .footer-inner{
+        gap:20px;
+      }
+
+      .copyright{
+        margin-top:22px;
+        padding-top:18px;
+      }
+    }
+
+    @media(min-width:700px){
+      .offer-banner{
+        padding:40px;
+      }
+    }
+
+    @media(min-width:960px){
+      .hero-inner{
+        padding-top:58px;
+      }
+
+      .quote-form-wrap{
+        align-items:start;
+      }
+
+      .quote-form button{
+        min-width:240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Local to Mansfield, Ohio • Faith-inspired care • Quality-focused memory preservation
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <strong>SafeHands</strong>
+          <span>Memory Co.</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#promise">Promise</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="btn btn-primary" href="#contact">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Preserve what matters</div>
+        <h1>Memories fade. <em>We don’t.</em></h1>
+
+        <p class="hero-copy">
+          Your family photos are handled with quiet care, restored with patience, and returned as
+          beautiful digital keepsakes ready to share, protect, and pass down.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#how" class="btn btn-secondary">How It Works</a>
+        </div>
+
+        <div class="trust-row">
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <strong>Trusted Care</strong>
+              <span>Careful intake, tracking, and gentle handling from start to finish.</span>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">○</div>
+            <div>
+              <strong>Secure & Private</strong>
+              <span>Private handling, secure delivery, and no outsourcing.</span>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">♡</div>
+            <div>
+              <strong>Cherished Forever</strong>
+              <span>Organized files ready for family sharing and safekeeping.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="memory-box">
+          <div class="small-logo"></div>
+          <h2>SafeHands<br>Memory Co.</h2>
+          <p>Handled with care</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-inner">
+      <div class="section-heading">
+        <div class="eyebrow">Our Services</div>
+        <h2>We preserve more than photos.</h2>
+        <p>
+          We help families protect their stories through careful scanning, restoration,
+          organizing, and safe digital delivery.
+        </p>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <div class="service-icon">▧</div>
+          <h3>Photo Scanning</h3>
+          <p>Sharp, consistent scans for loose prints, albums, documents, and keepsake collections.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">◫</div>
+          <h3>Slides & Negatives</h3>
+          <p>Careful high-resolution conversion for older film formats, slides, and negatives.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">✦</div>
+          <h3>Photo Restoration</h3>
+          <p>Light cleanup, color correction, scratch reduction, and heirloom repair options.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">☁</div>
+          <h3>Digital Delivery</h3>
+          <p>Receive organized files by USB, private cloud link, or external drive.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">▣</div>
+          <h3>Memory Protection</h3>
+          <p>Clear file naming, backup guidance, and secure delivery so memories stay protected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="about-panel">
+        <div>
+          <div class="eyebrow">About SafeHands</div>
+          <h2>Mansfield care for memories that deserve more than a scan.</h2>
+          <p>
+            SafeHands Memory Co. is based in Mansfield, Ohio, helping families digitize,
+            restore, and organize photos with calm, careful service. Your originals are
+            handled locally, never outsourced, and treated with the privacy and respect
+            family history deserves.
+          </p>
+        </div>
+
+        <div class="about-list">
+          <div class="about-point">
+            <strong>Local handling</strong>
+            <span>Your photos stay with SafeHands from intake through delivery.</span>
+          </div>
+
+          <div class="about-point">
+            <strong>Restoration options</strong>
+            <span>Light correction and repair are available for worn or damaged images.</span>
+          </div>
+
+          <div class="about-point">
+            <strong>Faith-inspired integrity</strong>
+            <span>Built on care, privacy, patience, and honest communication.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section offer-section" id="offer">
+    <div class="section-inner">
+      <div class="offer-banner">
+        <div>
+          <div class="eyebrow">First Client Offer</div>
+          <h2>First 100 loose photos starting at $49.</h2>
+          <div class="offer-note">Perfect for testing the service before preserving a full family archive.</div>
+          <p>
+            A thoughtful first step for protecting the photos that matter most. Bring a small stack,
+            experience the SafeHands process, and decide what you want preserved next.
+          </p>
+        </div>
+
+        <a href="sms:14192953739" class="btn btn-primary">Claim Starter Offer</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section how" id="how">
+    <div class="section-inner">
+      <div class="section-heading">
+        <div class="eyebrow">Simple. Safe. Stress-free.</div>
+        <h2>How it works</h2>
+        <p>
+          We keep the process easy, respectful, and clear from the first conversation to final delivery.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Send or Drop Off</h3>
+          <p>Bring your photos locally in Mansfield or arrange pickup/drop-off.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We Digitize</h3>
+          <p>Your memories are scanned carefully with quality settings for lasting use.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>We Restore & Organize</h3>
+          <p>We clean up, correct, label, and organize your files when requested.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>You Enjoy Forever</h3>
+          <p>Receive your memories safely on USB, cloud, or external drive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise" id="promise">
+    <div class="promise-grid">
+      <div class="promise-image"></div>
+
+      <div>
+        <div class="eyebrow">Our Promise</div>
+        <h2>Handled with care. <span>Remembered forever.</span></h2>
+
+        <p>
+          SafeHands Memory Co. is built on peace, patience, and respect. We treat every photo
+          like it belongs to our own family — because memories are not just files. They are stories.
+        </p>
+
+        <div class="promise-list">
+          <div class="promise-point">
+            <span class="check">✓</span>
+            <div>
+              <strong>Local & Personal</strong>
+              <p>Proudly serving Mansfield, Ohio and surrounding families.</p>
+            </div>
+          </div>
+
+          <div class="promise-point">
+            <span class="check">✓</span>
+            <div>
+              <strong>Faith-Inspired</strong>
+              <p>Built on compassion, integrity, and purpose without overwhelming the customer.</p>
+            </div>
+          </div>
+
+          <div class="promise-point">
+            <span class="check">✓</span>
+            <div>
+              <strong>Quality You Can Trust</strong>
+              <p>Private handling, organized delivery, no outsourcing, and clear communication.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="section-inner">
+      <div class="section-heading">
+        <div class="eyebrow">Clear packages</div>
+        <h2>Choose the care level that fits.</h2>
+        <p>
+          Start simple, or choose premium preservation for heirloom photos and family legacy projects.
+        </p>
+      </div>
+
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Basic Memories</h3>
+          <p>Simple, affordable scanning for shoeboxes and loose prints.</p>
+          <div class="money"><span>Starting at</span>$0.35/photo</div>
+          <ul>
+            <li>Loose photo scanning</li>
+            <li>Digital file delivery</li>
+            <li>Final quote depends on volume and condition</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Ask About Basic</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="badge">Most Popular</div>
+          <h3>Family Keepsake</h3>
+          <p>Our best balance of quality, organization, and value.</p>
+          <div class="money"><span>Starting at</span>$0.75/photo</div>
+          <ul>
+            <li>Crop and orientation fixes</li>
+            <li>Light color correction</li>
+            <li>USB or private cloud delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Choose Keepsake</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Legacy Preserve</h3>
+          <p>Premium care for heirlooms, restoration, and family legacy projects.</p>
+          <div class="money"><span>Starting at</span>$1.50/photo</div>
+          <ul>
+            <li>Cleaning and correction</li>
+            <li>Restoration options</li>
+            <li>Quote based on condition and goals</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Request Premium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-heading">
+        <div class="eyebrow">Questions families ask</div>
+        <h2>What to know before you hand over a box of memories.</h2>
+        <p>
+          Clear expectations help the process feel easy, private, and comfortable.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How long does it take?</h3>
+          <p>Most small projects are completed in about one to two weeks. Larger archive projects are quoted with a clear timeline before work begins.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you handle fragile photos?</h3>
+          <p>Yes. Fragile, older, curled, or delicate photos are handled slowly and carefully, with extra attention during intake and scanning.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can you restore damaged photos?</h3>
+          <p>Yes. Light cleanup, color correction, scratch reduction, and more detailed restoration options are available after reviewing the photo.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I get USB or cloud delivery?</h3>
+          <p>You can choose USB, private cloud link, or external drive delivery depending on the size of your project and what is easiest for your family.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is pickup available in Mansfield?</h3>
+          <p>Local pickup or drop-off may be available in the Mansfield area. Text or call to coordinate the safest option for your project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="quote-form-wrap">
+        <div>
+          <div class="eyebrow">Request a Quote</div>
+          <h2>Tell us what you want preserved.</h2>
+          <p>
+            This is only a quote request, not a final booking. Share a few details and SafeHands
+            will follow up with clear options before any work begins.
+          </p>
+        </div>
+
+        <form class="quote-form" action="mailto:safehandsmemory.co@gmail.com" method="post" enctype="text/plain">
+          <label>
+            <span>Name</span>
+            <input type="text" name="Name" autocomplete="name" required>
+          </label>
+
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="Phone" autocomplete="tel">
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="Email" autocomplete="email" required>
+          </label>
+
+          <label class="full-field">
+            <span>What do you need digitized?</span>
+            <textarea name="Project details" rows="5" placeholder="Loose photos, albums, slides, negatives, damaged photos, or a full family archive project"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary">Send Quote Request</button>
+        </form>
+      </div>
+
+      <div class="quote-box">
+        <div>
+          <h2>Let’s preserve your memories.</h2>
+          <p>
+            Text or call with a picture of your photo box, album, slides, or old prints.
+            We’ll give you a simple quote and walk you through the easiest next step.
+          </p>
+        </div>
+
+        <div class="quote-actions">
+          <a href="tel:14192953739" class="btn btn-primary">Call 419-295-3739</a>
+          <a href="mailto:safehandsmemory.co@gmail.com" class="btn btn-secondary">Email Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>SafeHands Memory Co.</h3>
+        <p>Photo digitizing, restoration, and memory preservation in Mansfield, Ohio.</p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>
+          Phone: <a href="tel:14192953739">419-295-3739</a><br>
+          Email: <a href="mailto:safehandsmemory.co@gmail.com">safehandsmemory.co@gmail.com</a><br>
+          Location: Mansfield, Ohio
+        </p>
+      </div>
+
+      <div>
+        <h3>Our Heart</h3>
+        <p>
+          Preserve what matters. Cherish forever. Faith-inspired care, professional handling,
+          and stress-free service.
+        </p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 SafeHands Memory Co. All rights reserved. • From Faded to Forever.
+    </div>
+  </footer>
+
+</body>
+</html>
